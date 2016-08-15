@@ -647,7 +647,7 @@ static int gsl_ts_probe(
 	ts->client = client;
 	i2c_set_clientdata(client, ts);
 
-	if (!strcmp(gsl_fw_name, ""))
+	if (strcmp(gsl_fw_name, ""))
 		strncpy(ts->fw_name, gsl_fw_name, sizeof(ts->fw_name));
 	else
 		strncpy(ts->fw_name, GSL_FW_NAME_DEFAULT, sizeof(ts->fw_name));
