@@ -221,7 +221,12 @@ static int gsl_ts_init(struct gsl_ts_data *ts, const struct firmware *fw)
 	return 0;
 }
 
-static int gsl_ts_write(struct i2c_client *client, u8 reg, const u8 *pdata, int datalen)
+static int gsl_ts_write(
+	struct i2c_client *client,
+	u8 reg,
+	const u8 *pdata,
+	int datalen
+)
 {
 	u8 buf[GSL_PAGE_SIZE + 1];
 	unsigned int bytelen = 0;
